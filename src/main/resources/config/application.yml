@@ -1,0 +1,49 @@
+server:
+  port: 9999
+  context-path: /ms
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://10.0.5.204:3306/rnn_test?useSSL=false
+      username: czk
+      password: admin
+      db-type: com.alibaba.druid.pool.DruidDataSource
+      name: ms
+      initial-size: 1
+      max-active: 20
+      min-idle: 1
+      max-wait: 60000
+      pool-prepared-statements: true
+      validation-query: select 'x'
+      validation-query-timeout: 5
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      max-open-prepared-statements: 20
+      filters: stat
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.robert.ms.domain
+#  configuration:
+#    interceptors:
+#      -[0] com.baomidou.mybatisplus.plugins.PaginationInterceptor
+
+#pagehelper
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: 'true'
+  params: count=countSql
+
+logging:
+  level:
+    com:
+      robert:
+        ms:
+          mapper: debug
+
+
+
+
