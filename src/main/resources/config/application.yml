@@ -26,9 +26,6 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.robert.ms.domain
-#  configuration:
-#    interceptors:
-#      -[0] com.baomidou.mybatisplus.plugins.PaginationInterceptor
 
 #pagehelper
 pagehelper:
